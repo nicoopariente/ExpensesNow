@@ -4,6 +4,12 @@
  */
 package expensesnow.Views;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
 /**
  *
  * @author User
@@ -26,30 +32,175 @@ public class DashboardView extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        dashboardWelcomeMessage = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        storeName = new javax.swing.JTextField();
+        recordAmount = new javax.swing.JTextField();
+        addExpensesRecordButton = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        expensesTotal = new javax.swing.JTextField();
+        expensesCalculations = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        expensesTrack = new javax.swing.JTextArea();
+        jLabel7 = new javax.swing.JLabel();
 
-        jLabel1.setText("You have successfully logged In");
+        dashboardWelcomeMessage.setText("You have successfully logged In");
+
+        jLabel2.setText("Add new expense record");
+
+        jLabel3.setText("Store");
+
+        jLabel4.setText("Amount");
+
+        addExpensesRecordButton.setText("Add Record");
+
+        jLabel5.setText("Current Total expenses of the month:");
+
+        expensesTotal.setEditable(false);
+
+        expensesCalculations.setText("You used % of your target expenses. We recommend spending an average of $ per day until the end of the month.");
+
+        expensesTrack.setEditable(false);
+        expensesTrack.setColumns(20);
+        expensesTrack.setRows(5);
+        expensesTrack.setText("Here will be the list of expenses till now");
+        jScrollPane1.setViewportView(expensesTrack);
+
+        jLabel7.setText("List of expenses:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(339, 339, 339)
-                .addComponent(jLabel1)
-                .addContainerGap(343, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(337, 337, 337)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(dashboardWelcomeMessage)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(14, 14, 14)
+                                .addComponent(jLabel2))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(354, 354, 354)
+                        .addComponent(addExpensesRecordButton))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(expensesCalculations)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel5)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel3)
+                                        .addComponent(jLabel4)))
+                                .addGap(34, 34, 34)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(storeName, javax.swing.GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE)
+                                    .addComponent(recordAmount)
+                                    .addComponent(expensesTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 693, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel7))))
+                .addContainerGap(113, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(101, 101, 101)
-                .addComponent(jLabel1)
-                .addContainerGap(403, Short.MAX_VALUE))
+                .addGap(14, 14, 14)
+                .addComponent(dashboardWelcomeMessage)
+                .addGap(36, 36, 36)
+                .addComponent(jLabel2)
+                .addGap(34, 34, 34)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(storeName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(recordAmount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(addExpensesRecordButton)
+                .addGap(73, 73, 73)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(expensesTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
+                .addComponent(expensesCalculations)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    public JButton getAddExpensesRecordButton() {
+        return addExpensesRecordButton;
+    }
+
+    public JLabel getDashboardWelcomeMessage() {
+        return dashboardWelcomeMessage;
+    }
+
+    public JLabel getExpensesCalculations() {
+        return expensesCalculations;
+    }
+
+    public JTextField getExpensesTotal() {
+        return expensesTotal;
+    }
+
+    public JTextArea getExpensesTrack() {
+        return expensesTrack;
+    }
+
+    public JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    public JLabel getjLabel3() {
+        return jLabel3;
+    }
+
+    public JLabel getjLabel4() {
+        return jLabel4;
+    }
+
+    public JLabel getjLabel5() {
+        return jLabel5;
+    }
+
+    public JLabel getjLabel7() {
+        return jLabel7;
+    }
+
+    public JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    public JTextField getRecordAmount() {
+        return recordAmount;
+    }
+
+    public JTextField getStoreName() {
+        return storeName;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton addExpensesRecordButton;
+    private javax.swing.JLabel dashboardWelcomeMessage;
+    private javax.swing.JLabel expensesCalculations;
+    private javax.swing.JTextField expensesTotal;
+    private javax.swing.JTextArea expensesTrack;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField recordAmount;
+    private javax.swing.JTextField storeName;
     // End of variables declaration//GEN-END:variables
 }

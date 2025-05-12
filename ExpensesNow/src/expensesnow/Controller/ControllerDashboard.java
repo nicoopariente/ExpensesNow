@@ -6,45 +6,38 @@ package expensesnow.Controller;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import expensesnow.Views.LogInView;
+import expensesnow.Views.DashboardView;
 import expensesnow.Model.ModelcsvFile;
- 
+import java.time.LocalDateTime;
 /**
  *
  * @author User
  */
-public class ControllerLogin implements MouseListener {
+public class ControllerDashboard implements MouseListener {
     
-    private LogInView login;
+    private DashboardView dashboard;
     private final ControllerApp controllerApp;
     private ModelcsvFile modelcsvFile = new ModelcsvFile();
+    private String name;
 
-    public ControllerLogin(LogInView login, ControllerApp controller) {
-        this.login = login;
+    public ControllerDashboard(DashboardView dashboard, ControllerApp controller, String name) {
+        this.dashboard = dashboard;
         this.controllerApp = controller;
-        login.getLoginButton().addMouseListener(this);
-        login.getSignupButton().addMouseListener(this);
+        dashboard.getDashboardWelcomeMessage().setText("You have successfully logged In " + name);
+        dashboard.getAddExpensesRecordButton().addMouseListener(this);
     }
     
     
 
     @Override
     public void mouseClicked(MouseEvent e) {
+        LocalDateTime time = LocalDateTime.now();
+        System.out.println(time);
         
-        if(e.getSource() == this.login.getLoginButton()){
-            String name = this.login.getUsernameField().getText();
-            String password = this.login.getPasswordField().getText();
-            if(modelcsvFile.checkUserData(name, password)){
-                controllerApp.showDashboard();
-            }
-            else{
-                this.login.getMessageLogin().setText("Incorrect name or password");
-            }
-        }
-        if(e.getSource() == this.login.getSignupButton()){
-            controllerApp.showSignUp();
-        }
-        
+    }
+
+    public String getName() {
+        return name;
     }
 
     @Override

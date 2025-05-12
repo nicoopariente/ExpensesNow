@@ -18,6 +18,7 @@ public class ControllerSignup implements MouseListener {
     private SignUpView signup;
     private final ControllerApp controllerApp;
     private ModelcsvFile modelcsvFile = new ModelcsvFile();
+    private String name;
 
     public ControllerSignup(SignUpView signup, ControllerApp controller) {
         this.signup = signup;
@@ -36,13 +37,18 @@ public class ControllerSignup implements MouseListener {
             String password = signup.getNewUserPassword().getText();
             String targetAmount = signup.getNewTargetAmount().getText();
             if((Boolean)modelcsvFile.createRecord(name, password, targetAmount)[0]){
-                controllerApp.showDashboard();
+                this.name = name;
+                controllerApp.showDashboardFromSignup();
             }else{
                 signup.getMessageLabel().setText((String)modelcsvFile.createRecord(name, password, targetAmount)[1]);
             }
             
         }
         
+    }
+
+    public String getName() {
+        return name;
     }
 
     @Override

@@ -18,6 +18,7 @@ public class ControllerLogin implements MouseListener {
     private LogInView login;
     private final ControllerApp controllerApp;
     private ModelcsvFile modelcsvFile = new ModelcsvFile();
+    private String name;
 
     public ControllerLogin(LogInView login, ControllerApp controller) {
         this.login = login;
@@ -35,7 +36,8 @@ public class ControllerLogin implements MouseListener {
             String name = this.login.getUsernameField().getText();
             String password = this.login.getPasswordField().getText();
             if(modelcsvFile.checkUserData(name, password)){
-                controllerApp.showDashboard();
+                this.name = name;
+                controllerApp.showDashboardFromLogin();
             }
             else{
                 this.login.getMessageLogin().setText("Incorrect name or password");
@@ -45,6 +47,10 @@ public class ControllerLogin implements MouseListener {
             controllerApp.showSignUp();
         }
         
+    }
+
+    public String getName() {
+        return name;
     }
 
     @Override

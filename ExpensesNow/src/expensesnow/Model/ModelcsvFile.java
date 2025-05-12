@@ -140,5 +140,11 @@ public class ModelcsvFile {
         }
         return found;
     }
+        
+    public final boolean createExpense(String name, String store, String amount, String date){
+        
+        
+        return true;
+    }
     
 }

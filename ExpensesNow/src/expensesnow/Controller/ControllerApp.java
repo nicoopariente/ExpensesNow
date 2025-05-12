@@ -20,6 +20,9 @@ public class ControllerApp {
     private JFrame frame;
     private JPanel mainPanel;
     private CardLayout cardlayout;
+    private ControllerLogin loginWindow;
+    private DashboardView dashboardView;
+    private ControllerSignup signupWindow;
 
     public ControllerApp() {
         
@@ -32,18 +35,18 @@ public class ControllerApp {
         //Creating instance of the Log in View
         LogInView logInView = new LogInView();
         //Adding the logic that is separated in a Controller Class that implements MouseListener interface
-        ControllerLogin loginWindow = new ControllerLogin(logInView, this);
+        loginWindow = new ControllerLogin(logInView, this);
         //We add the logInView object to our main Frame
         mainPanel.add(logInView, "login");
         
         //Creating instance of the Sign up View
         SignUpView signUpView = new SignUpView();
         //Adding the logic that is separated in a Controller Class that implements MouseListener interface
-        ControllerSignup signupWindow = new ControllerSignup(signUpView, this);
+        signupWindow = new ControllerSignup(signUpView, this);
         //We add the signupView object to our main Frame
         mainPanel.add(signUpView, "signup");
         
-        mainPanel.add(new DashboardView(), "dashboard");
+
         
         //Setting some properties to our main frame
         frame.setContentPane(mainPanel);
@@ -68,8 +71,30 @@ public class ControllerApp {
     }
     
     //Method to show the dashboard view
-    public final void showDashboard(){
+    public final void showDashboardFromLogin(){
+        if(dashboardView == null){
+            dashboardView = new DashboardView();
+            ControllerDashboard dashboardWindow = new ControllerDashboard(dashboardView, this, loginWindow.getName()); 
+            mainPanel.add(dashboardView, "dashboard");
+        }
+        else{
+            dashboardView.getDashboardWelcomeMessage().setText("You have successfully logged In " + loginWindow.getName());
+        }
+        System.out.println(loginWindow.getName());
         cardlayout.show(mainPanel, "dashboard");
     }
+    
+    public final void showDashboardFromSignup(){
+    if(dashboardView == null){
+        dashboardView = new DashboardView();
+        ControllerDashboard dashboardWindow = new ControllerDashboard(dashboardView, this, signupWindow.getName()); 
+        mainPanel.add(dashboardView, "dashboard");
+    }
+    else{
+        dashboardView.getDashboardWelcomeMessage().setText("You have successfully logged In " + signupWindow.getName());
+    }
+    System.out.println(loginWindow.getName());
+    cardlayout.show(mainPanel, "dashboard");
+}
     
 }
