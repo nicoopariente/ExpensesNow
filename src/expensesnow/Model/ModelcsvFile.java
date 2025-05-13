@@ -58,7 +58,6 @@ public class ModelcsvFile {
                         this.file = new FileWriter(this.directoryPath + "/" + this.csvFileName, true);
                         file.append(line + "\n");
                         file.close();
-                        System.out.println("done");
                     }catch(IOException e){
                         System.err.print(e.getMessage());
                     }
@@ -71,14 +70,12 @@ public class ModelcsvFile {
                     return new Object[] {false, "Only numbers are accepted for the Target Amount"}; 
                 }
             }else{
-                System.out.println("The chosen name already exists. Please try with a new one, thanks");
             return new Object[] {false, "The chosen name already exists. Please try with a different one, thanks"}; 
             }
         //if the file does not exist, createFile method will be called, and if successfull, the createRecord function will call itself again.    
         }else if(createFile(this.csvFileName)){
                 return createRecord(name, password, newTargetAmount );
         }else{
-            System.out.println("failed to save record");
             return new Object[] {false, "failed to save record"}; 
         }
         
@@ -93,10 +90,8 @@ public class ModelcsvFile {
         }
         
         if(checkFile(this.csvFileName)){
-            System.out.println("File Created");
             return true;
         }else{
-            System.out.println("Failed to create file");
             return false;
         }
     }
