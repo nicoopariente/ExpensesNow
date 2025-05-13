@@ -13,6 +13,8 @@ To develop the software I installed the JDK version 17 from Oracle website. I us
 
 Important libraries that are part of my Java project are "Swing" for the UI, "java.awt.event" to handle Mouse events, "java.util.List" to implement dynamic arrays, and "java.time" to add date calculations.
 
+The app should be executed from the root folder ExpensesNow.
+
 # Useful Websites
 
 - [Oracle JDK](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
