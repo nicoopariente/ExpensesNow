@@ -11,7 +11,7 @@ import expensesnow.Model.ModelcsvFile;
  
 /**
  *
- * @author User
+ * Adds logic to the Sign Up page
  */
 public class ControllerSignup implements MouseListener {
     
@@ -19,10 +19,12 @@ public class ControllerSignup implements MouseListener {
     private final ControllerApp controllerApp;
     private ModelcsvFile modelcsvFile = new ModelcsvFile();
     private String name;
-
+    
+    //Declaring the constructor
     public ControllerSignup(SignUpView signup, ControllerApp controller) {
         this.signup = signup;
         this.controllerApp = controller;
+        //Adding Mouse Listener to the Sign Up button
         signup.getCreateAccountButton().addMouseListener(this);
     }
     
@@ -31,15 +33,20 @@ public class ControllerSignup implements MouseListener {
     @Override
     public void mouseClicked(MouseEvent e) {
         
-        
+        //Checking if the Mouse Event is related to the Sign Up Button
         if(e.getSource() == this.signup.getCreateAccountButton()){
+            //Storing the information of the User. Name, Password and Target Amount for each Month
             String name = signup.getNewUserName().getText();
             String password = signup.getNewUserPassword().getText();
             String targetAmount = signup.getNewTargetAmount().getText();
+            //createRecord method will return an object with two values, a boolean and a string. 
+            //The boolean will return true if user created successfully. The string will return an error message in case the creation failed
             if((Boolean)modelcsvFile.createRecord(name, password, targetAmount)[0]){
                 this.name = name;
+                //We use the Controller App method to display the Dashboard
                 controllerApp.showDashboardFromSignup();
             }else{
+                //If creation failed, we display a message with information on the reason
                 signup.getMessageLabel().setText((String)modelcsvFile.createRecord(name, password, targetAmount)[1]);
             }
             
