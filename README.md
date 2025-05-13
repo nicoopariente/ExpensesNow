@@ -20,10 +20,10 @@ Through this project, I learned:
 - Java Version: JDK 17 (from Oracle)
 - IDE: NetBeans
 - Key Libraries:
-  javax.swing – for the graphical user interface
-  java.awt.event – to handle mouse and UI events
-  java.util.List – to manage dynamic arrays
-  java.time – for handling date-related operations
+  - javax.swing – for the graphical user interface
+  - java.awt.event – to handle mouse and UI events
+  - java.util.List – to manage dynamic arrays
+  - java.time – for handling date-related operations
 
 Note: The application should be executed from the root folder ExpensesNow.
 
