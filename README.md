@@ -1,19 +1,31 @@
 # Overview
 
-Expenses Now is a software written in Java language by Nicolas Pariente. The program allows users to create an account, and track their monthly expenses receiving suggestions in the process.
+Expenses Now is a Java Desktop application written by Nicolas Pariente. It allows users to create an account and track their monthly expenses, receiving suggestions in the process.
 
-The purpose of this software was to learn Java by apply the MVC model to a desktop app, including views, controllers and a model communicating in this case witha csv file.
-I learned how to install the JDK, how Netbeans IDE features work with Swing, how to structure the Java code, how event interfaces can be implemented, how dynamic arrays work with Java, and how to read and write to a csv file.
+The project was created as a learning exercise to understand Java by applying the MVC (Model-View-Controller) pattern using a desktop UI built with Swing. Data is stored in CSV files, simulating a lightweight database.
+
+Through this project, I learned:
+
+- How to install and configure the JDK
+- How to use the NetBeans IDE and Swing components
+- How to structure Java code using MVC
+- How to implement event handling through interfaces
+- How to use dynamic arrays (List)
+- How to read and write data to/from CSV files
 
 [Software Demo Video](https://www.youtube.com/watch?v=nmexdYzDeII)
 
 # Development Environment
 
-To develop the software I installed the JDK version 17 from Oracle website. I used Netbeans as the IDE.
+- Java Version: JDK 17 (from Oracle)
+- IDE: NetBeans
+- Key Libraries:
+  javax.swing – for the graphical user interface
+  java.awt.event – to handle mouse and UI events
+  java.util.List – to manage dynamic arrays
+  java.time – for handling date-related operations
 
-Important libraries that are part of my Java project are "Swing" for the UI, "java.awt.event" to handle Mouse events, "java.util.List" to implement dynamic arrays, and "java.time" to add date calculations.
-
-The app should be executed from the root folder ExpensesNow.
+Note: The application should be executed from the root folder ExpensesNow.
 
 # Useful Websites
 
@@ -23,6 +35,6 @@ The app should be executed from the root folder ExpensesNow.
 
 # Future Work
 
-- Implement a Database to store user and expenses records with ID key, instead of a csv file.
-- Add functionallity to edit and delete already created expenses records.
-- Make the UI elements responsive.
+- Migrate from CSV files to a relational database with primary keys
+- Add functionality to edit and delete existing expense records
+- Improve the responsiveness and flexibility of the user interface
