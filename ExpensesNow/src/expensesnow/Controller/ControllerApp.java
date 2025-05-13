@@ -24,7 +24,7 @@ public class ControllerApp {
     public ControllerApp() {
         
         //Creating main Frame that will cotain all the pages (panels) that will transition
-        frame = new JFrame("frameApp");
+        frame = new JFrame("ExpensesNow");
         //CardLayout class allows to change from panel to panel
         cardlayout = new CardLayout();
         mainPanel = new JPanel(cardlayout);
